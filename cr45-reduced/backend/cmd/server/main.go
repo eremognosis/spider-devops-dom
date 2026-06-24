@@ -20,6 +20,10 @@ func main() {
 	addr := envOrDefault("HTTP_ADDR", ":8080")
 	databaseURL := envOrDefault("DATABASE_URL", "postgres://postgres:postgres@localhost:5432/cr45_reduced?sslmode=disable")
 	appSecret := envOrDefault("APP_SECRET", "cr45-reduced-dev-secret")
+<<<<<<< HEAD
+=======
+	logRequests := envOrDefault("LOG_REQUESTS", "") == "true"
+>>>>>>> ca12e89 (updates)
 
 	db := mustOpenDB(databaseURL)
 	defer db.Close()
@@ -32,7 +36,11 @@ func main() {
 	if err != nil {
 		logger.Fatalf("auth init failed: %v", err)
 	}
+<<<<<<< HEAD
 	server := api.NewServer(repo, authService)
+=======
+	server := api.NewServer(repo, authService, logger, logRequests)
+>>>>>>> ca12e89 (updates)
 
 	httpServer := &http.Server{
 		Addr:              addr,

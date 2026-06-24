@@ -120,6 +120,13 @@ On successful startup, migrations create and seed the required tables. The seede
 - username: `admin`
 - password: `classrep123`
 
+<<<<<<< HEAD
+=======
+### Logging
+
+Setting `LOG_REQUESTS` to `true` in the environment will make the server log all incoming requests and their response codes. 
+
+>>>>>>> ca12e89 (updates)
 ## What to Check When Debugging
 
 - Migration failures or PostgreSQL connection errors in backend logs
